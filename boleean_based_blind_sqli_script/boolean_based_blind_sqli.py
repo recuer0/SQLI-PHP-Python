@@ -8,7 +8,7 @@ class Sqli():
         self.URL = url
         self.string = ""
         self.failed_attempts = 0
-        self.ptitle = pwn.log.progress('Iniciando Inyección SQL')
+        self.ptitle = pwn.log.progress('Iniciando Time-Based Blind SQLI')
         self.pstring = pwn.log.progress('Datos extraídos')
         self.query_types = {
             'databases': self.database_query,
