@@ -38,10 +38,10 @@ Desactiva todos los reportes de errores de MySQLi, es decir, **evita que se mues
 ### 🐍 SCRIPTS EN PYTHON:
 >Estos scripts son herramientas automáticas para explotar vulnerabilidades de inyección SQL en aplicaciones web que no muestran errores explícitos. Funcionan extrayendo información de la base de datos carácter por carácter, primero listando bases de datos, luego tablas, columnas y finalmente los datos de interés, mediante consultas especialmente diseñadas.
 
->[!Uso]
->Para ejecutar las inyecciones SQL debes ejecutar el archivo `main.py`, que crea una instancia de la clase `Sqli()` y llama al método `run()` para arrancar la inyección.
+> [!Uso]
+> Para ejecutar las inyecciones SQL debes ejecutar el archivo `main.py`, que crea una instancia de la clase `Sqli()` y llama al método `run()` para arrancar la inyección.
 >
->⚠️ **Si el nombre de la URL es distinto, ajústelo en el archivo `main.py`.**
+> ⚠️ **Si el nombre de la URL es distinto, ajústelo en el archivo `main.py`.**
 
 
 ***
@@ -57,12 +57,12 @@ Este script realiza una inyección SQL a ciegas basada en el tiempo de respuesta
 - Mide el tiempo que tarda en responder el servidor; si el tiempo excede un umbral definido (ej. 0.03 segundos), el script interpreta que la condición era verdadera y añade el carácter correspondiente al resultado que está reconstruyendo.
 - Si no hay retraso, asume que la condición es falsa y prueba el siguiente carácter. Así, reconstruye paso a paso los nombres de bases de datos, tablas, columnas o registros, sin depender de mensajes de error o respuestas visibles, usando solo el tiempo como canal lateral de inferencia.
 
->[!Ajustar sleep]
->El tiempo de espera que he definido es de `0.03s`, que puede ser demasiado bajo en algunos casos. Si recibe falsos positivos, auméntelo tanto en las `querys` como en la condición:
->``` python
->if (after-before) > [TIME]:
+> [!Ajustar sleep]
+> El tiempo de espera que he definido es de `0.03s`, que puede ser demasiado bajo en algunos casos. Si recibe falsos positivos, auméntelo tanto en las `querys` como en la condición:
+> ``` python
+> if (after-before) > [TIME]:
 >	self.string += chr(self.char)
 >	self.pstring.status(self.string)
->	self.failed_attempts = 0
->	break
->```
+> 	self.failed_attempts = 0
+> 	break
+> ```
