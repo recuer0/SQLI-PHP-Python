@@ -3,7 +3,7 @@
 import signal
 import sys
 
-from time_based_blind_script import Sqli
+from time_based_blind_sqli import Sqli
 
 def def_handler(sig,frame):
     print(f'\n\n[!] Saliendo...\n')
