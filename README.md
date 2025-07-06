@@ -7,7 +7,6 @@ Además, también aporto los scripts en Python usados para las SQLI a ciegas, qu
 ***
 ### 📁 SCRIPTS PHP:
 >Estos script PHP establecen una conexión con una base de datos y realizan una consulta SQL utilizando un valor recibido por la URL a través del parámetro `id`. Usa `mysqli` para ejecutar la consulta y muestra el resultado en pantalla, extrayendo un campo específico de la tabla. Sin embargo, construye la consulta insertando directamente el valor del parámetro sin validación, lo que lo hace vulnerable a ataques de inyección SQL.
-![Logo](img/1.png)
 ***
 #### ❌ ERROR BASED SQLI:
 
@@ -37,12 +36,13 @@ Desactiva todos los reportes de errores de MySQLi, es decir, **evita que se mues
 ***
 ### 🐍 SCRIPTS EN PYTHON:
 >Estos scripts son herramientas automáticas para explotar vulnerabilidades de inyección SQL en aplicaciones web que no muestran errores explícitos. Funcionan extrayendo información de la base de datos carácter por carácter, primero listando bases de datos, luego tablas, columnas y finalmente los datos de interés, mediante consultas especialmente diseñadas.
+>
+![Logo](img/1.png)
 
 > [!WARNING]
 > Para ejecutar las inyecciones SQL debes ejecutar el archivo `main.py`, que crea una instancia de la clase `Sqli()` y llama al método `run()` para arrancar la inyección.
 >
 > ⚠️ **Si el nombre de la URL es distinto, ajústelo en el archivo `main.py`.**
-
 
 ***
 #### ✅ BOOLEAN BASED BLIND SQLI:
